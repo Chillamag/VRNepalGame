@@ -11,6 +11,8 @@ public class MovePlayer : MonoBehaviour {
 
     public static Transform nextDicePoint;
     public static GameObject teleportDicePoint;
+    public static GameObject nextField;
+    public static GameObject qField;
     public Transform currentPoint;
     public Transform menuPoint;
     public Transform startPoint;
@@ -47,6 +49,8 @@ public class MovePlayer : MonoBehaviour {
     void Start()
     {
         teleportDicePoint = new GameObject();
+        nextField = new GameObject();
+        qField = new GameObject();
         //GameStart();
         //diceText = GetComponent<Text>();
         //diceText.text = "Terning: ";
@@ -154,6 +158,12 @@ public class MovePlayer : MonoBehaviour {
             turnStart = turnEnd;
             //teleportDicePoint = points[fieldNumber+1];
             teleportDicePoint.transform.position = Vector3.Lerp(points[fieldNumber].transform.position, points[fieldNumber + 1].transform.position, 0.5f);
+
+            nextField.transform.position = points[fieldNumber +1].transform.position;
+
+            qField.transform.position = Vector3.Lerp(points[fieldNumber].transform.position, points[fieldNumber + 1].transform.position, 0.25f);
+            qField.transform.rotation = points[fieldNumber + 1].transform.rotation;
+            nextField.transform.rotation = points[fieldNumber + 1].transform.rotation;
             //diceToRoll.transform.position = teleportDicePoint.transform.position;
             if (diceCanTeleport)
             {
