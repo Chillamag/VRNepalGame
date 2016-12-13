@@ -16,7 +16,7 @@ public class MovePlayer : MonoBehaviour {
     public Transform currentPoint;
     public Transform menuPoint;
     public Transform startPoint;
-    public Transform nextPoint;
+    public static int nextPoint;
     public static Text diceText;
 
     public GameObject[] _fields;
@@ -160,8 +160,9 @@ public class MovePlayer : MonoBehaviour {
             teleportDicePoint.transform.position = Vector3.Lerp(points[fieldNumber].transform.position, points[fieldNumber + 1].transform.position, 0.5f);
 
             nextField.transform.position = points[fieldNumber +1].transform.position;
-
+            nextPoint = fieldNumber+1;
             qField.transform.position = Vector3.Lerp(points[fieldNumber].transform.position, points[fieldNumber + 1].transform.position, 0.25f);
+
             qField.transform.rotation = points[fieldNumber + 1].transform.rotation;
             nextField.transform.rotation = points[fieldNumber + 1].transform.rotation;
             //diceToRoll.transform.position = teleportDicePoint.transform.position;
