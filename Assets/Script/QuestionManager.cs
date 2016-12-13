@@ -3,17 +3,39 @@ using System.Collections;
 
 public class QuestionManager : MonoBehaviour {
 
-    public GameObject question1;
+    public GameObject questions;
+    public GameObject q1;
+    public GameObject q2;
+    public GameObject q3;
+    public GameObject q4;
+    public GameObject q5;
+    public GameObject q6;
+    public GameObject q7;
+    public GameObject q8;
+    public GameObject q9;
+    public GameObject q10;
+
     public Quaternion qRot;
     //public GameObject q;
     public bool qShown;
     public float qRotY;
+    public int ranQ;
 
 	// Use this for initialization
 	void Start () {
         //q.GetComponent<GameObject>();
         //question1 = q;
-        question1.SetActive(false);
+        questions.SetActive(false);
+        q1.SetActive(false);
+        q2.SetActive(false);
+        q3.SetActive(false);
+        q4.SetActive(false);
+        q5.SetActive(false);
+        q6.SetActive(false);
+        q7.SetActive(false);
+        q8.SetActive(false);
+        q9.SetActive(false);
+        q10.SetActive(false);
         qShown = false;
         //qRot = new Quaternion();
 	}
@@ -28,11 +50,18 @@ public class QuestionManager : MonoBehaviour {
                 ShowQuestion();
             else
             {
-                question1.SetActive(false);
+                questions.SetActive(false);
                 qShown = false;
             }
 
         }
+
+        if (MovePlayer.canShowQuestion)
+        {
+            ShowQuestion();
+            MovePlayer.canShowQuestion = false;
+        }
+
     }
 
 
@@ -88,13 +117,41 @@ public class QuestionManager : MonoBehaviour {
             case 44: { qRotY = -3.95f; break; }
         }
 
-
+        ranQ = Random.Range(1, 11);
+        switch (ranQ)
+        {
+            case 1: { q1.SetActive(true); break; }
+            case 2: { q2.SetActive(true); break; }
+            case 3: { q3.SetActive(true); break; }
+            case 4: { q4.SetActive(true); break; }
+            case 5: { q5.SetActive(true); break; }
+            case 6: { q6.SetActive(true); break; }
+            case 7: { q7.SetActive(true); break; }
+            case 8: { q8.SetActive(true); break; }
+            case 9: { q9.SetActive(true); break; }
+            case 10: { q10.SetActive(true); break; }
+        }
         //qRot = new Quaternion(0, MovePlayer.teleportDicePoint.transform.rotation.y, MovePlayer.teleportDicePoint.transform.rotation.z, 1);
-        question1.transform.position = MovePlayer.qField.transform.position;
+        questions.transform.position = MovePlayer.qField.transform.position;
         qRot = Quaternion.Euler(0, qRotY, 0);
-        question1.transform.rotation = qRot;
-        question1.SetActive(true);
+        questions.transform.rotation = qRot;
+        questions.SetActive(true);
         qShown = true;
+    }
+
+    public void HideQuestions()
+    {
+        questions.SetActive(false);
+        q1.SetActive(false);
+        q2.SetActive(false);
+        q3.SetActive(false);
+        q4.SetActive(false);
+        q5.SetActive(false);
+        q6.SetActive(false);
+        q7.SetActive(false);
+        q8.SetActive(false);
+        q9.SetActive(false);
+        q10.SetActive(false);
     }
 
 }

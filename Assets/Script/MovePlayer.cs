@@ -35,6 +35,7 @@ public class MovePlayer : MonoBehaviour {
     public static int turnEnd;
     public int fieldNumber;
     public static bool diceCanTeleport;
+    public static bool canShowQuestion;
 
     public static GameObject diceCube;
     private static Quaternion diceRot1 = new Quaternion(-90, 180, -90, 1);
@@ -61,6 +62,7 @@ public class MovePlayer : MonoBehaviour {
             _fields = GameObject.FindGameObjectsWithTag("Fields");
         }
         //_fields = _fields.OrderBy(Field => Field.Name).ToList();
+        canShowQuestion = false;
     }
 
     public void GameStart()
@@ -170,6 +172,7 @@ public class MovePlayer : MonoBehaviour {
             {
                 diceToRoll.transform.position = teleportDicePoint.transform.position;
                 diceCanTeleport = false;
+                canShowQuestion = true;
                 //QuestionManager.ShowQuestion();
 
             }
