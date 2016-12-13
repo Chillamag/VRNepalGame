@@ -154,4 +154,13 @@ public class QuestionManager : MonoBehaviour {
         q10.SetActive(false);
     }
 
+    public void WrongAnswer()
+    {
+
+    }
+    public void RightAnswer()
+    {
+
+    }
+
 }
