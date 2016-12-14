@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class DiceManager : MonoBehaviour {
 
@@ -32,15 +33,38 @@ public class DiceManager : MonoBehaviour {
     public bool readyToRoll;
     public bool playerCanMove;
 
+    public float gazeTime = 2f;
+    private float timer;
+    private bool gazedAt;
+    public GameObject redDice;
+
     // Use this for initialization
     void Start () {
         diceRB = GetComponent<Rigidbody>();
         readyToRoll = false;
         playerCanMove = false;
+        ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerExitHandler);
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+        if (gazedAt)
+        {
+            timer += Time.deltaTime;
+            Vector3 newScale = new Vector3(timer/gazeTime*2, redDice.transform.localScale.y, redDice.transform.localScale.z);
+            Vector3 newPos = new Vector3(-1.1f + (timer / gazeTime), redDice.transform.localPosition.y, redDice.transform.localPosition.z);
+
+            redDice.transform.localScale = newScale;
+            redDice.transform.localPosition = newPos;
+
+            if (timer >= gazeTime)
+            {
+                ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
+                timer = 0f;
+                //GetComponent<Collider>().enabled = false;
+            }
+        }
 
         side_1 = Physics.CheckSphere(sideCheck_1.position, sideCheckRadius, whatIsGround);
         side_2 = Physics.CheckSphere(sideCheck_2.position, sideCheckRadius, whatIsGround);
@@ -116,5 +140,20 @@ public class DiceManager : MonoBehaviour {
         playerCanMove = true;
         //MovePlayer.diceCanTeleport = true;
     }
+
+    public void PointerEnter()
+    {
+        gazedAt = true;
+        redDice.SetActive(true);
+    }
+    public void PointerExit()
+    {
+        gazedAt = false;
+        timer = 0;
+        redDice.SetActive(false);
+        redDice.transform.localScale = new Vector3(0.1f, 2.1f, 2.1f);
+        redDice.transform.localPosition = new Vector3(-1.1f, 0, 0);
+    }
+
 
 }

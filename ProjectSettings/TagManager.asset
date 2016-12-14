@@ -9,6 +9,9 @@ TagManager:
   - Dice
   - Fields
   - Question1
+  - Svar1
+  - Svar2
+  - Svar3
   layers:
   - Default
   - TransparentFX

@@ -149,7 +149,7 @@ public class MovePlayer : MonoBehaviour {
             if (pointSelection >= points.Length) { //-1
 
                 pointSelection = points.Length;
-                //YOUWON!!
+                //YOUWON!! 
             }
             currentPoint = points[pointSelection];
             

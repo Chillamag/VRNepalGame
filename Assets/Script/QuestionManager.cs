@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class QuestionManager : MonoBehaviour {
 
@@ -21,8 +22,11 @@ public class QuestionManager : MonoBehaviour {
     public float qRotY;
     public int ranQ;
 
-	// Use this for initialization
-	void Start () {
+    AudioSource rightSound;
+    AudioSource wrongSound;
+
+    // Use this for initialization
+    void Start () {
         //q.GetComponent<GameObject>();
         //question1 = q;
         questions.SetActive(false);
@@ -38,7 +42,10 @@ public class QuestionManager : MonoBehaviour {
         q10.SetActive(false);
         qShown = false;
         //qRot = new Quaternion();
-	}
+        AudioSource[] sounds = GetComponents<AudioSource>();
+        rightSound = sounds[0];
+        wrongSound = sounds[1];
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -137,6 +144,8 @@ public class QuestionManager : MonoBehaviour {
         questions.transform.rotation = qRot;
         questions.SetActive(true);
         qShown = true;
+
+        
     }
 
     public void HideQuestions()
@@ -156,11 +165,12 @@ public class QuestionManager : MonoBehaviour {
 
     public void WrongAnswer()
     {
-
+        wrongSound.Play();
     }
     public void RightAnswer()
     {
-
+        rightSound.Play();
     }
+
 
 }
