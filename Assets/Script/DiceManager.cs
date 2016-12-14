@@ -73,46 +73,30 @@ public class DiceManager : MonoBehaviour {
         side_5 = Physics.CheckSphere(sideCheck_5.position, sideCheckRadius, whatIsGround);
         side_6 = Physics.CheckSphere(sideCheck_6.position, sideCheckRadius, whatIsGround);
 
-        if (readyToRoll)
-        {
-            if (side_1)
-            {
+        if (readyToRoll){
+            if (side_1){
                 numberOfDice = 1;
-
             }
-            else if (side_2)
-            {
+            else if (side_2){
                 numberOfDice = 2;
-
             }
-            else if (side_3)
-            {
+            else if (side_3){
                 numberOfDice = 3;
-
             }
-            else if (side_4)
-            {
+            else if (side_4){
                 numberOfDice = 4;
-
-            }
-            else if (side_5)
+            }else if (side_5)
             {
                 numberOfDice = 5;
-
             }
-            else if (side_6)
-            {
+            else if (side_6){
                 numberOfDice = 6;
-
-            }
-            else
-            {
+            }else{
                 return;
             }
         }
 
-        if (diceRB.IsSleeping() && playerCanMove)
-        {
+        if (diceRB.IsSleeping() && playerCanMove){
             MovePlayer.diceNumber = numberOfDice;
             MovePlayer.rollDice();
             playerCanMove = false;

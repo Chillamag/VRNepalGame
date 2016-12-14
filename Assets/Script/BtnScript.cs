@@ -24,7 +24,6 @@ public class BtnScript : MonoBehaviour {
             timer += Time.deltaTime;
             btnImg.fillAmount = 1;
             btnImg.fillAmount -= (timer/gazeTime);
-
             if (timer >= gazeTime)
             {
                 ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
@@ -35,7 +34,6 @@ public class BtnScript : MonoBehaviour {
             }
         }
 	}
-
     public void PointerEnter()
     {
         gazedAt = true;

@@ -384,7 +384,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter Game
+  m_Text: Start Spil
 --- !u!222 &4377132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6117,7 +6117,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: Tilbage
 --- !u!222 &277620610
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7905,7 +7905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter Game
+  m_Text: Start Spil
 --- !u!222 &423472494
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8703,7 +8703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &467415544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16490,7 +16490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &866666809
 Transform:
   m_ObjectHideFlags: 0
@@ -23887,7 +23887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1076883456
 Transform:
   m_ObjectHideFlags: 0
@@ -25237,7 +25237,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter Game
+  m_Text: Start Spil
 --- !u!222 &1152094548
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34407,7 +34407,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter Game
+  m_Text: Start Spil
 --- !u!222 &1540057674
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36044,7 +36044,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: Tilbage
 --- !u!222 &1626523142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45206,7 +45206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: Tilbage
 --- !u!222 &2022752423
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45473,7 +45473,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: Tilbage
 --- !u!222 &2034700266
 CanvasRenderer:
   m_ObjectHideFlags: 0
